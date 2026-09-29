@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Xylez Tweaks — 0 Delay · Max FPS · Low Ping</title>
-<meta name="description" content="Xylez Tweaks is a Windows optimization utility for gamers: 201 tweaks for CPU, GPU, RAM, network and input latency, plus Discord debloat. One key, one PC, instant setup.">
+<title>Xylez Services — 0 Delay · Max FPS · Low Ping</title>
+<meta name="description" content="Xylez Services — Windows tweaks, Fortnite macros, and bundles for gamers who want max FPS, zero delay, and low latency. Instant delivery, lifetime keys.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
@@ -30,7 +30,6 @@
     line-height:1.6;
     overflow-x:hidden;
   }
-  /* ---------- galaxy canvas ---------- */
   #stars{
     position:fixed;inset:0;
     width:100%;height:100%;
@@ -50,10 +49,9 @@
     66%{transform:translate(-3%,3%) scale(1.04);opacity:.85}
   }
   main,header,footer{position:relative;z-index:1}
+  .wrap{max-width:100%;margin:0 auto;padding:0 16px}
 
-  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-
-  /* ---------- top nav ---------- */
+  /* nav */
   header{
     position:sticky;top:0;z-index:5;
     background:rgba(5,1,10,.72);
@@ -77,7 +75,7 @@
   }
   .nav a.link:hover{color:#fff}
 
-  /* ---------- buttons ---------- */
+  /* buttons */
   .btn{
     display:inline-block;
     padding:14px 30px;border-radius:12px;
@@ -99,11 +97,11 @@
   }
   .btn-ghost:hover{background:rgba(255,255,255,.14);transform:translateY(-2px)}
 
-  /* ---------- hero ---------- */
+  /* hero */
   .hero{
-    min-height:92vh;
+    min-height:40vh;
     display:flex;flex-direction:column;align-items:center;justify-content:center;
-    text-align:center;padding:70px 0 60px;
+    text-align:center;padding:40px 0 30px;
   }
   h1{
     font-size:clamp(40px,7.5vw,84px);
@@ -127,8 +125,9 @@
     font-size:12px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;
     color:var(--cyan);
   }
-  /* ---------- sections ---------- */
-  section{padding:88px 0}
+
+  /* sections */
+  section{padding:40px 0}
   .eyebrow{
     font-size:12px;font-weight:800;letter-spacing:.3em;text-transform:uppercase;
     color:var(--pink);margin-bottom:10px;
@@ -140,7 +139,7 @@
   }
   .lead{color:var(--text-dim);max-width:640px}
 
-  /* glass cards — same look as the app's tweak cards */
+  /* feature cards */
   .grid{
     display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:18px;margin-top:44px;
@@ -171,25 +170,58 @@
   .step p{font-size:14px;color:var(--text-dim)}
 
   /* pricing */
+  .pricing-grid{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,320px));
+    gap:14px;
+    margin-top:0;
+    justify-content:center;
+  }
+  @media(max-width:1000px){
+    .pricing-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:560px){
+    .pricing-grid{grid-template-columns:1fr}
+  }
   .price-card{
-    max-width:430px;margin:40px auto 0;
     background:var(--glass);
     border:1px solid var(--glass-border);
     border-radius:22px;
-    padding:36px 34px;text-align:center;
-    box-shadow:0 0 44px rgba(176,38,255,.28);
+    overflow:hidden;
+    box-shadow:0 0 30px rgba(176,38,255,.18);
+    display:flex;flex-direction:column;
+    position:relative;
+  }
+  .price-card.featured{
+    border-color:var(--pink);
+    box-shadow:0 0 50px rgba(255,47,209,.35);
+  }
+  .price-card.featured::before{
+    content:"BEST VALUE";
+    position:absolute;top:12px;right:12px;z-index:2;
+    background:linear-gradient(135deg,var(--pink),var(--violet));
+    font-size:10px;font-weight:900;letter-spacing:.18em;
+    padding:4px 12px;border-radius:999px;color:#fff;
+  }
+  .price-body{
+    padding:26px 24px;
+    display:flex;flex-direction:column;
+    flex:1;
+  }
+  .price-card .plan-name{
+    font-size:17px;font-weight:800;letter-spacing:.25em;text-transform:uppercase;
+    color:var(--cyan);margin-bottom:10px;
   }
   .price-card .amount{
-    font-size:56px;font-weight:900;
+    font-size:64px;font-weight:900;
     text-shadow:0 0 26px rgba(224,64,251,.7);
+    line-height:1;
   }
-  .price-card .per{color:var(--text-dim);font-size:14px;margin-bottom:22px}
-  .price-card ul{list-style:none;text-align:left;margin:0 0 28px}
-  .price-card li{
-    font-size:14px;color:var(--text);padding:7px 0;
-  }
+  .price-card .per{color:var(--text-dim);font-size:15px;margin:6px 0 20px}
+  .price-card ul{list-style:none;text-align:left;margin:0 0 24px;flex:1}
+  .price-card li{font-size:18px;color:var(--text);padding:7px 0}
   .price-card li::before{content:"✦";color:var(--pink);margin-right:10px}
-  .price-card .btn{width:100%;margin-bottom:12px}
+  .price-card .btn{width:100%;margin-bottom:10px;font-size:17px;padding:18px 30px}
 
   /* FAQ */
   .faq{max-width:720px;margin:44px auto 0}
@@ -221,7 +253,7 @@
   .fineprint{font-size:12px;color:var(--text-dim);max-width:640px;margin:0 auto}
 
   @media(max-width:560px){
-    .price-card{padding:30px 22px}
+    .price-body{padding:22px 18px}
   }
 </style>
 </head>
@@ -232,8 +264,7 @@
 
 <header>
   <div class="wrap nav">
-    <a class="brand" href="#top" aria-label="Xylez Tweaks home">
-      <!-- mini ufo mark -->
+    <a class="brand" href="#top" aria-label="Xylez Services home">
       <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
         <ellipse cx="32" cy="30" rx="24" ry="9" fill="url(#sg)"/>
         <ellipse cx="32" cy="21" rx="11" ry="9" fill="url(#dg)"/>
@@ -247,13 +278,13 @@
           </radialGradient>
         </defs>
       </svg>
-      Xylez Tweaks
+      Xylez Services
     </a>
     <nav>
       <a class="link" href="#features">Features</a>
       <a class="link" href="#pricing">Pricing</a>
       <a class="link" href="#faq">FAQ</a>
-      <a class="link" href="https://discord.gg/xyleztweaks" target="_blank" rel="noopener">Discord</a>
+      <a class="link" href="https://discord.gg/xylezservices" target="_blank" rel="noopener">Discord</a>
     </nav>
   </div>
 </header>
@@ -262,28 +293,92 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero wrap">
-    <h1>Xylez Tweaks</h1>
-    <p class="tagline">0 Delay · Max FPS · Low Ping · Low Latency</p>
+    <h1>Xylez Services</h1>
+    <p class="tagline">0 Delay · Max FPS · Fastest Macro · 1ms Response Time</p>
 
     <div class="stats" aria-label="Highlights">
-      <div class="stat"><b>201</b><span>Tweaks</span></div>
+      <div class="stat"><b>198</b><span>Tweaks</span></div>
       <div class="stat"><b>12</b><span>Categories</span></div>
       <div class="stat"><b>1-Click</b><span>Apply &amp; Revert</span></div>
     </div>
+  </section>
 
-    <div class="price-card" id="pricing">
-      <!-- CHANGE YOUR PRICE HERE -->
-      <div class="amount">£19.99</div>
-      <div class="per">one-time payment · lifetime license</div>
-      <ul>
-        <li>All 201 tweaks across 12 categories</li>
-        <li>Discord debloat &amp; laptop-safe presets</li>
-        <li>RAM cleaner, monitors &amp; extra tools</li>
-        <li>License locked to your PC (HWID)</li>
-        <li>Support through our Discord</li>
-      </ul>
-      <a class="btn btn-pink" href="https://payhip.com/b/EbsGT" target="_blank" rel="noopener">Buy Now — Instant Delivery</a>
-      <a class="btn btn-ghost" href="https://discord.gg/xyleztweaks" target="_blank" rel="noopener">Questions? Join our Discord</a>
+  <!-- ============ PRICING ============ -->
+  <section id="pricing" class="wrap">
+    <div class="pricing-grid">
+
+      <!-- 1: Tweaks Lifetime -->
+      <div class="price-card">
+        <div class="price-body">
+          <div class="plan-name">Xylez Tweaks — Lifetime</div>
+          <div class="amount">£19.99</div>
+          <div class="per">one-time payment · lifetime license</div>
+          <ul>
+            <li>All 198 tweaks across 12 categories</li>
+            <li>Debloat &amp; laptop-safe presets</li>
+            <li>RAM cleaner &amp; extra tools</li>
+            <li>Lifetime License Key</li>
+          </ul>
+          <a class="btn btn-pink" href="https://payhip.com/b/EbsGT" target="_blank" rel="noopener">Buy Now — Instant Delivery</a>
+          <a class="btn btn-ghost" href="https://discord.gg/xylezservices" target="_blank" rel="noopener">Questions? Join Discord</a>
+        </div>
+      </div>
+
+      <!-- 2: Macro Lifetime -->
+      <div class="price-card">
+        <div class="price-body">
+          <div class="plan-name">Xylez Macro — Lifetime</div>
+          <div class="amount">£19.99</div>
+          <div class="per">one-time payment · lifetime license</div>
+          <ul>
+            <li>6 different macros</li>
+            <li>1ms precision delay control</li>
+            <li>Per-macro keybind customization</li>
+            <li>Works for Fortnite &amp; Projects</li>
+            <li>Lifetime License Key</li>
+          </ul>
+          <a class="btn btn-pink" href="https://payhip.com/b/BP4qo" target="_blank" rel="noopener">Buy Now — Instant Delivery</a>
+          <a class="btn btn-ghost" href="https://discord.gg/xylezservices" target="_blank" rel="noopener">Questions? Join Discord</a>
+        </div>
+      </div>
+
+      <!-- 3: Macro 30-day -->
+      <div class="price-card">
+        <div class="price-body">
+          <div class="plan-name">Xylez Macro — 30 Days</div>
+          <div class="amount">£9.99</div>
+          <div class="per">per month · renewable</div>
+          <ul>
+            <li>6 different macros</li>
+            <li>1ms precision delay control</li>
+            <li>Per-macro keybind customization</li>
+            <li>Works for Fortnite &amp; Projects</li>
+            <li>30-Day License Key</li>
+          </ul>
+          <a class="btn btn-pink" href="https://payhip.com/b/wNk7W" target="_blank" rel="noopener">Buy 30 Days — Instant Delivery</a>
+          <a class="btn btn-ghost" href="https://discord.gg/xylezservices" target="_blank" rel="noopener">Questions? Join Discord</a>
+        </div>
+      </div>
+
+      <!-- 4: Bundle — FEATURED -->
+      <div class="price-card featured">
+        <div class="price-body">
+          <div class="plan-name">Bundle — Lifetime</div>
+          <div class="amount">£29.99</div>
+          <div class="per">one-time payment · lifetime license</div>
+          <ul>
+            <li>All 198 tweaks across 12 categories</li>
+            <li>Debloat &amp; laptop-safe presets</li>
+            <li>RAM cleaner &amp; extra tools</li>
+            <li>6 different macros</li>
+            <li>1ms precision delay control</li>
+            <li>Lifetime License Key</li>
+          </ul>
+          <a class="btn btn-pink" href="https://payhip.com/b/IjFeh" target="_blank" rel="noopener">Get the Bundle — Best Deal</a>
+          <a class="btn btn-ghost" href="https://discord.gg/xylezservices" target="_blank" rel="noopener">Questions? Join Discord</a>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -311,8 +406,8 @@
     <h2>Running in under 2 minutes</h2>
     <div class="steps">
       <div class="step"><span class="n">1</span><h3>Buy your key</h3><p>Pay securely by card or PayPal. Your license key and the download land in your inbox straight away — no waiting, no tickets.</p></div>
-      <div class="step"><span class="n">2</span><h3>Install &amp; register</h3><p>Run Xylez Tweaks and create your account with your key. Your license locks to your PC — one key, one machine.</p></div>
-      <div class="step"><span class="n">3</span><h3>Flip the switches</h3><p>Pick your tweaks, apply, restart, and feel the difference. Turn anything off again whenever you want.</p></div>
+      <div class="step"><span class="n">2</span><h3>Install &amp; register</h3><p>Run your product and create your account with your key. Your license locks to your PC — one key, one machine.</p></div>
+      <div class="step"><span class="n">3</span><h3>Flip the switches</h3><p>Pick your tweaks or macros, apply, and feel the difference. Turn anything off again whenever you want.</p></div>
     </div>
   </section>
 
@@ -335,7 +430,7 @@
       </details>
       <details>
         <summary>How do I get the app after paying?</summary>
-        <p>Instantly. As soon as your payment goes through, your license key and the download link are emailed to you automatically — card or PayPal, same thing. If the email doesn't show up, check your spam folder first, then open a ticket in our Discord and we'll sort it.</p>
+        <p>Instantly. As soon as your payment goes through, your license key and the download link are emailed to you automatically — card or PayPal, same thing. If the email doesn't show up, check your spam folder first, then open a ticket in our Discord.</p>
       </details>
       <details>
         <summary>Will this boost FPS in every game?</summary>
@@ -352,15 +447,14 @@
 
 <footer>
   <div class="socials">
-    <a href="https://discord.gg/xyleztweaks" target="_blank" rel="noopener">Discord</a>
+    <a href="https://discord.gg/xylezservices" target="_blank" rel="noopener">Discord</a>
     <a href="https://www.youtube.com/@xylez777/videos" target="_blank" rel="noopener">YouTube</a>
     <a href="https://www.tiktok.com/@xylez1x" target="_blank" rel="noopener">TikTok</a>
   </div>
-  <p class="fineprint">© 2026 Xylez Tweaks. Windows is a trademark of Microsoft Corporation — Xylez Tweaks is not affiliated with Microsoft. Performance improvements vary by system.</p>
+  <p class="fineprint">© 2026 Xylez Services. Windows is a trademark of Microsoft Corporation — Xylez Services is not affiliated with Microsoft. Performance improvements vary by system.</p>
 </footer>
 
 <script>
-/* Galaxy starfield with the same cursor "force-field" as the app */
 (function(){
   const c = document.getElementById('stars');
   if(!c) return;
@@ -369,10 +463,7 @@
   const COUNT = 80, FIELD = 90, PUSH = 0.9;
   let mouse = {x:-1000,y:-1000}, vel = {x:0,y:0};
 
-  function resize(){
-    W = c.width = window.innerWidth;
-    H = c.height = window.innerHeight;
-  }
+  function resize(){W = c.width = window.innerWidth; H = c.height = window.innerHeight;}
   function build(){
     stars = [];
     for(let i=0;i<COUNT;i++){
